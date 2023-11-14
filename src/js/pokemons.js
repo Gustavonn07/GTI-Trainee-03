@@ -14,18 +14,32 @@ async function gerarPokemon() {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${num}`);
             const json = await response.json();
 
-            return {
-                nome: json.name,
-                id: json.id
-            };
+            if (json.types.length === 1) {
+                return {
+                    nome: json.name,
+                    id: json.id,
+                    type: json.types[0].type.name
+                };
+
+            } else if (json.types.length === 2) {
+                return {
+                    nome: json.name,
+                    id: json.id,
+                    type: json.types[0].type.name,
+                    type2: json.types[1].type.name
+                };
+                
+            } else {
+                return null;
+            }
         });
 
-        const result = await Promise.all(arrayPromises);
+        const result = await Promise.all(arrayPromises.filter(pokemon => pokemon !== null));
         return result.sort((a, b) => a.id - b.id);
 
     } catch (error) {
         console.error(error);
-        throw error; 
+        throw error;
     }
 }
 
