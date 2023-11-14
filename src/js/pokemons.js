@@ -1,31 +1,34 @@
 function gerarNum(min, max) {
     const arrayPokemonsNum = [];
 
-    for(let i = min; i <= max; i++) {
+    for (let i = min; i <= max; i++) {
         arrayPokemonsNum.push(i);
-    };
+    }
 
     return arrayPokemonsNum;
-};
+}
 
-function gerarPokemon() {
-    const array = [];
-    return gerarNum(1, 151).map(num => {
-        fetch(`https://pokeapi.co/api/v2/pokemon/${num}`)
-        .then(data => data.json())
-        .then(json => {
-            let obj = {
+async function gerarPokemon() {
+    try {
+        const arrayPromises = gerarNum(1, 151).map(async num => {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${num}`);
+            const json = await response.json();
+
+            return {
                 nome: json.name,
                 id: json.id
-            }
-            array.push(obj);
-            array.sort((a, b) => a.id - b.id);
-        })
-    });
+            };
+        });
+
+        const result = await Promise.all(arrayPromises);
+        return result.sort((a, b) => a.id - b.id);
+
+    } catch (error) {
+        console.error(error);
+        throw error; 
+    }
 }
+
 gerarPokemon()
-
-// fetch(`https://pokeapi.co/api/v2/pokemon/1`)
-//         .then(data => data.json())
-//         .then(json => console.log(json.name))
-
+    .then(result => console.log(result))
+    .catch(error => console.error(error));
