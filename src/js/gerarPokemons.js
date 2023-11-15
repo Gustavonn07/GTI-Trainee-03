@@ -14,24 +14,13 @@ export default async function gerarPokemon() {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${num}`);
             const json = await response.json();
 
-            if (json.types.length === 1) {
-                return {
-                    nome: json.name,
+            return {
                     id: json.id,
-                    type: json.types[0].type.name
-                };
+                    nome: json.name.charAt(0).toUpperCase() + json.name.slice(1),
+                    type: json.types[0].type.name.charAt(0).toUpperCase() + json.types[0].type.name.slice(1),
+                    type2: json.types[1] ? json.types[1].type.name.charAt(0).toUpperCase() + json.types[1].type.name.slice(1) : ''
+            };
 
-            } else if (json.types.length === 2) {
-                return {
-                    nome: json.name,
-                    id: json.id,
-                    type: json.types[0].type.name,
-                    type2: json.types[1].type.name
-                };
-                
-            } else {
-                return null;
-            }
         });
 
         const result = await Promise.all(arrayPromises.filter(pokemon => pokemon !== null));
