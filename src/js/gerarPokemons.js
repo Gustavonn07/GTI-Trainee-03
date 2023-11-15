@@ -8,7 +8,7 @@ function gerarNum(min, max) {
     return arrayPokemonsNum;
 }
 
-async function gerarPokemon() {
+export default async function gerarPokemon() {
     try {
         const arrayPromises = gerarNum(1, 151).map(async num => {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${num}`);
@@ -38,11 +38,6 @@ async function gerarPokemon() {
         return result.sort((a, b) => a.id - b.id);
 
     } catch (error) {
-        console.error(error);
         throw error;
     }
 }
-
-gerarPokemon()
-    .then(result => console.log(result))
-    .catch(error => console.error(error));
