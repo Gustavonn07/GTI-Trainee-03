@@ -5,11 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/dist/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <title>Document</title>
+    <style>
+        .t-shadow {
+            text-shadow: 4px 4px 0 #000;
+        }
+    </style>
 </head>
-<body class="w-full">
-    <div id="root" class="flex flex-wrap w-full justify-center items-center gap-10"></div>
+<body class="w-full relative">
+    <header class="w-full h-36 bg-red-400 flex items-center justify-center pb-16">
+        <h1 class="text-6xl t-shadow text-slate-50 font-semibold font-font-poke">PokeAPIdex</h1>
+    </header>
+
+    <main class="bg-gray-50">
+        <h2 class="text-center text-slate-800 drop-shadow-2xl pt-10 mb-20 font-bold text-4xl">Escolha os seus pokemons:</h2>
+        <div id="root" class="flex relative flex-wrap w-full justify-center items-center gap-10 mb-40"></div>
+    </main>
+
+    <footer>
+
+    </footer>
     
-    <script type="module" src="src/js/script.js"></script>
+    <div class="fixed w-2/3 h-20 bg-slate-100 border-4 border-b-0 rounded-b-none border-slate-700 left-1/2 bottom-0 -translate-x-1/2 shadow-2xl rounded-lg">
+
+    </div>
+    <script type="module" src="src/js/renderizaPokemon.js"></script>
 </body>
 </html>
