@@ -8,32 +8,32 @@ async function renderizaPokemon() {
         root.innerHTML = pokemons.map(pokemon => {
 
             return pokemon.type2 ? `
-                <div class="w-64 bg-slate-500 h-96 mx-auto mt-10 flex flex-col items-center">
+                <div class="hover:scale-105 duration-200 hover:shadow-2xl w-64 h-96 mt-10 flex flex-col items-center rounded-2xl shadow-xl bg-slate-100">
                     <img src=${pokemon.imagem} alt=${pokemon.nome} class="h-1/2">
                     
-                    <div class="flex flex-col">
-                        <h3 class="text-3xl mb-3 text-center">${pokemon.nome}</h3>
+                    <div class="flex flex-col bg-red-500 rounded-b-2xl border-t-gray-900 border-t-4 w-full h-1/2">
+                        <h3 class="text-3xl my-3 text-center text-slate-100">${pokemon.nome}</h3>
                         <div class="flex gap-8 justify-center">
-                            <h4>${pokemon.type}</h4>
-                            <h4>${pokemon.type2}</h4>
+                            <h4 class="text-slate-800 w-20 h-7 text-center bg-gray-100 rounded-3xl">${pokemon.type}</h4>
+                            <h4 class="text-slate-800 w-20 h-7 text-center bg-gray-100 rounded-3xl">${pokemon.type2}</h4>
                         </div>
-                        <button class="mt-6 text-xl text-center">Adicionar</button>
+                        <button class="mt-auto pb-3 hover:scale-x-110 duration-200 text-xl mx-auto text-center text-slate-800 w-1/2 bg-slate-100 rounded-t-xl">Adicionar</button>
                     </div>
                 </div> 
 
             ` : `
-                <div class="w-64 bg-slate-500 h-96 mx-auto mt-10 flex flex-col items-center">
+                <div class="hover:scale-105 duration-200 hover:shadow-2xl w-64 bg-slate-100 h-96 mt-10 rounded-2xl shadow-xl flex flex-col items-center">
                         <img src=${pokemon.imagem} alt=${pokemon.nome} class="h-1/2">
                         
-                        <div class="flex flex-col">
-                            <h3 class="text-3xl mb-3 text-center">${pokemon.nome}</h3>
-                            <div>
-                                <h4 class="text-center">${pokemon.type}</h4>
+                        <div class="flex flex-col bg-red-500 rounded-b-2xl border-t-gray-900 border-t-4 w-full h-1/2">
+                            <h3 class="text-3xl my-3 text-center text-slate-100">${pokemon.nome}</h3>
+                            <div class="mx-auto">
+                                <h4 class="text-slate-800 w-20 h-7 text-center bg-gray-100 rounded-3xl">${pokemon.type}</h4>
                             </div>
-                            <button class="mt-6 text-xl">Adicionar</button>
+                            <button class="mt-auto mx-auto pb-3 hover:scale-x-110 duration-200 text-xl text-slate-800 w-1/2 bg-slate-100 rounded-t-xl">Adicionar</button>
                         </div>
                     </div> 
-        </div> 
+                </div> 
             `;
         }).join('');
 
