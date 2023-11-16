@@ -5,30 +5,34 @@ const root = document.getElementById('root');
 async function renderizaPokemon() {
     try {
         const pokemons = await gerarPokemon();
-
-        // Testes
-        const url = "https://assets.pokemon.com/assets/cms2/img/misc/countries/pt/country_detail_pokemon.png"
-
         root.innerHTML = pokemons.map(pokemon => {
+
             return pokemon.type2 ? `
-                <div class="w-64 bg-slate-500 h-72 mx-auto mt-10 flex flex-col items-center gap-5">
-                    <img src=${url} alt="" class="w-full h-1/2">
+                <div class="w-64 bg-slate-500 h-96 mx-auto mt-10 flex flex-col items-center">
+                    <img src=${pokemon.imagem} alt=${pokemon.nome} class="h-1/2">
                     
-                    <h3 class="text-2xl">${pokemon.nome}</h3>
-                    <div class="flex gap-5">
-                        <h4>${pokemon.type}</h4>
-                        <h4>${pokemon.type2}</h4>
-                    </div> 
+                    <div class="flex flex-col">
+                        <h3 class="text-3xl mb-3 text-center">${pokemon.nome}</h3>
+                        <div class="flex gap-8 justify-center">
+                            <h4>${pokemon.type}</h4>
+                            <h4>${pokemon.type2}</h4>
+                        </div>
+                        <button class="mt-6 text-xl text-center">Adicionar</button>
+                    </div>
                 </div> 
 
             ` : `
-            <div class="w-64 bg-slate-500 h-72 mx-auto mt-10 flex flex-col items-center gap-5">
-            <img src=${url} alt="" class="w-full h-1/2">
-            
-            <h3 class="text-2xl">${pokemon.nome}</h3>
-            <div class="">
-                <h4>${pokemon.type}</h4>
-            </div> 
+                <div class="w-64 bg-slate-500 h-96 mx-auto mt-10 flex flex-col items-center">
+                        <img src=${pokemon.imagem} alt=${pokemon.nome} class="h-1/2">
+                        
+                        <div class="flex flex-col">
+                            <h3 class="text-3xl mb-3 text-center">${pokemon.nome}</h3>
+                            <div>
+                                <h4 class="text-center">${pokemon.type}</h4>
+                            </div>
+                            <button class="mt-6 text-xl">Adicionar</button>
+                        </div>
+                    </div> 
         </div> 
             `;
         }).join('');

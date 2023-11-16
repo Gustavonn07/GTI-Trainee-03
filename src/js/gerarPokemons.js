@@ -16,6 +16,7 @@ export default async function gerarPokemon() {
 
             return {
                     id: json.id,
+                    imagem: json.sprites['front_default'],
                     nome: json.name.charAt(0).toUpperCase() + json.name.slice(1),
                     type: json.types[0].type.name.charAt(0).toUpperCase() + json.types[0].type.name.slice(1),
                     type2: json.types[1] ? json.types[1].type.name.charAt(0).toUpperCase() + json.types[1].type.name.slice(1) : ''
