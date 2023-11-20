@@ -10,7 +10,7 @@ function gerarNum(min, max) {
 
 export default async function gerarPokemon() {
     try {
-        const arrayPromises = gerarNum(1, 151).map(async num => {
+            const arrayPromises = gerarNum(1, 151).map(async num => {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${num}`);
             const json = await response.json();
 

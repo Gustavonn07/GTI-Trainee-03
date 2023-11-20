@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link rel="shortcut icon" href="images/pokebolaIcon.png" type="image/x-icon">
+    <title>PokeAPIdex</title>
     <style>
         .t-shadow {
             text-shadow: 4px 4px 0 #000;
@@ -16,8 +17,8 @@
     </style>
 </head>
 <body class="w-full relative">
-    <header class="w-full h-36 bg-red-400 flex items-center justify-center pb-16">
-        <h1 class="text-6xl t-shadow text-slate-50 font-semibold font-font-poke">PokeAPIdex</h1>
+    <header class="w-full h-52 bg-red-400 flex items-center justify-center">
+        <h1 class="text-6xl t-shadow text-slate-50 font-semibold font-font-poke" onclick="teste()">PokeAPIdex</h1>
     </header>
 
     <main class="bg-gray-50">
@@ -29,9 +30,13 @@
 
     </footer>
     
-    <div class="fixed w-2/3 h-20 bg-slate-100 border-4 border-b-0 rounded-b-none border-slate-700 left-1/2 bottom-0 -translate-x-1/2 shadow-2xl rounded-lg">
+    <div class="fixed w-2/3 h-20 bg-slate-100 border-4 border-b-0 rounded-b-none border-slate-700 left-1/2 bottom-0 -translate-x-1/2 shadow-2xl rounded-lg flex">
+        <button id="btn__rep" onclick="repetidos()" class="bg-red-200 absolute -top-14 right-1/2 translate-x-1/2 p-3 rounded-md border-slate-700 rounded-b-none border-4 border-b-0 font-semibold">Permitir repetidos</button>
 
+        <ul id="pokeTime__ul" class="flex"></ul>
     </div>
-    <script type="module" src="src/js/renderizaPokemon.js"></script>
+
+    <script src="src/js/selecionaPokemon.js"></script>
+    <script type="module" src="src/js/renderiza&selecionaPokemon.js"></script>
 </body>
 </html>
