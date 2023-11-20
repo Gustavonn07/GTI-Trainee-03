@@ -1,5 +1,4 @@
 import gerarPokemon from './gerarPokemons.js';
-import addPokemon from './selecionaPokemon.js';
 
 const root = document.getElementById('root');
 
@@ -19,7 +18,7 @@ async function renderizaPokemon() {
                             <h4 class="text-slate-800 w-20 h-7 text-center bg-gray-100 rounded-3xl">${pokemon.type}</h4>
                             <h4 class="text-slate-800 w-20 h-7 text-center bg-gray-100 rounded-3xl">${pokemon.type2}</h4>
                         </div>
-                        <button data-pokemon-id=${pokemon.id} class="mt-auto pb-3 hover:scale-x-110 focus:scale-x-110 active:scale-x-105 duration-200 text-xl mx-auto text-center text-slate-800 w-1/2 bg-slate-100 rounded-t-xl">Adicionar</button>
+                        <button onclick="addPokemon()" data-pokemon-id=${pokemon.id} class="mt-auto pb-3 hover:scale-x-110 focus:scale-x-110 active:scale-x-105 duration-200 text-xl mx-auto text-center text-slate-800 w-1/2 bg-slate-100 rounded-t-xl">Adicionar</button>
                     </div>
                 </div> 
 
@@ -33,7 +32,7 @@ async function renderizaPokemon() {
                             <div class="mx-auto">
                                 <h4 class="text-slate-800 w-20 h-7 text-center bg-gray-100 rounded-3xl">${pokemon.type}</h4>
                             </div>
-                            <button data-pokemon-id=${pokemon.id} class="mt-auto mx-auto pb-3 hover:scale-x-110 focus:scale-x-110 active:scale-x-105 duration-200 text-xl text-slate-800 w-1/2 bg-slate-100 rounded-t-xl">Adicionar</button>
+                            <button onclick="addPokemon()" data-pokemon-id=${pokemon.id} class="mt-auto mx-auto pb-3 hover:scale-x-110 focus:scale-x-110 active:scale-x-105 duration-200 text-xl text-slate-800 w-1/2 bg-slate-100 rounded-t-xl">Adicionar</button>
                         </div>
                     </div> 
                 </div> 
@@ -41,7 +40,6 @@ async function renderizaPokemon() {
         }).join('');
 
         // Importado do selecionaPokemon.js
-        addPokemon();
 
     } catch (error) {
         console.error(error);
