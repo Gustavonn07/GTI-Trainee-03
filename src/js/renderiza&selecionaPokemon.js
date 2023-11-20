@@ -39,8 +39,6 @@ async function renderizaPokemon() {
             `;
         }).join('');
 
-        // Importado do selecionaPokemon.js
-
     } catch (error) {
         console.error(error);
         // Criar uma página 404
