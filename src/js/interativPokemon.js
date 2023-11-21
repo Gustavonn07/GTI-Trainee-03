@@ -46,9 +46,9 @@ async function addPokemon() {
             pokemonIdExistentes.push(await promise);
         }
     }
-}
+};
 
-async function delPokemon() {
+function delPokemon() {
     for (let i = 0; i <= pokemonIdExistentes.length; i++) {
         del = true;
 
@@ -63,7 +63,7 @@ async function delPokemon() {
             li.appendChild(button);
         }
     }
-}
+};
 
 function remvPokemon(index) {
     pokeTime.removeChild(pokeTime.children[index]);
@@ -79,14 +79,13 @@ function remvPokemon(index) {
     }
 
     del = false;
-}
+};
 
 function remvAllPokemon() {
 
     while (pokeTime.firstChild) {
         // Ele vai removendo todos os primeiros filhos (até que não tenha como ter um primeiro filho)
         pokeTime.removeChild(pokeTime.firstChild);
+        pokemonIdExistentes.pop();
     }
-
-    del = false;
-}
+};
