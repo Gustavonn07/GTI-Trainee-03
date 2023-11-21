@@ -37,7 +37,7 @@ async function addPokemon() {
 
     if (!repetidoPode) {
         if (pokeTime.children.length < 6 && !pokemonIdExistentes.includes(await promise)) {
-            pokeTime.innerHTML += `<li class="pokeTime__li w-10 h-5 relative before:block before:w-10 before:h-5 before:absolute before:-bottom-5 before:rounded-b-full before:bg-slate-300 rounded-t-full bg-red-400 text-center">${await promise}</li>`;
+            pokeTime.innerHTML += `<li class="pokeTime__li sm:w-10 sm:h-5 w-5 h-2.5 relative before:block sm:before:w-10 before:w-5 before:h-2.5 sm:before:h-5 before:absolute sm:before:-bottom-5 before:-bottom-4 before:rounded-b-full before:bg-slate-300 rounded-t-full bg-red-400 text-center">${await promise}</li>`;
             pokemonIdExistentes.push(await promise);
         }
 
@@ -109,10 +109,10 @@ async function gerarTimesSalvos() {
     const timesSalvos = localStorage.getItem('Ids');
 
     main.innerHTML = `
-        <button onclick="retornarPokemons()" class="fixed top-5 right-5 w-28 rounded-2xl h-16 bg-slate-100 shadow-lg text-gray-900 font-semibold hover:scale-105 hover:-translate-y-1 hover:shadow-2xl active:-translate-y-0.5 active:shadow-xl active:scale-100 duration-200">Voltar</button>
-        <h2 class="text-center text-slate-800 drop-shadow-2xl pt-10 mb-6 font-bold text-4xl">Seu Time Pokemon:</h2>
-        <hr class="w-1/4 border-2" />
-        <div id="root" class="flex h-96 justify-center"></div>
+        <button onclick="retornarPokemons()" class="fixed top-5 right-5 w-20 xl:w-28 rounded-2xl h-12 xl:h-16 bg-slate-100 shadow-lg text-gray-900 font-semibold hover:scale-105 hover:-translate-y-1 hover:shadow-2xl active:-translate-y-0.5 active:shadow-xl active:scale-100 duration-200">Voltar</button>
+        <h2 class="text-center text-slate-800 drop-shadow-2xl pt-10 mb-6 font-bold text-2xl xl:text-4xl">Seu Time Pokemon:</h2>
+        <hr class="w-3/4 xl:w-1/4 border-2"/>
+        <div id="root" class="flex h-96 justify-center flex-wrap"></div>
     `;
 
     if (timesSalvos) {
