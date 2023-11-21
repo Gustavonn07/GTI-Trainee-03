@@ -65,7 +65,7 @@ async function delPokemon() {
     }
 }
 
-async function remvPokemon(index) {
+function remvPokemon(index) {
     pokeTime.removeChild(pokeTime.children[index]);
     pokemonIdExistentes.splice(index, 1);
 
@@ -76,6 +76,16 @@ async function remvPokemon(index) {
         if (button) {
             li.removeChild(button);
         }
+    }
+
+    del = false;
+}
+
+function remvAllPokemon() {
+
+    while (pokeTime.firstChild) {
+        // Ele vai removendo todos os primeiros filhos (até que não tenha como ter um primeiro filho)
+        pokeTime.removeChild(pokeTime.firstChild);
     }
 
     del = false;
