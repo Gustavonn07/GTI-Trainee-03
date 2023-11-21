@@ -9,7 +9,7 @@ async function renderizaPokemon() {
 
             return pokemon.type2 ? `
                 <div class="hover:scale-105 relative duration-200 hover:shadow-2xl w-64 h-96 mt-10 flex flex-col items-center rounded-2xl shadow-xl bg-slate-100">
-                        <h5 class="absolute right-5 top-4 text-xl font-semibold text-slate-900">${pokemon.id}</h5>
+                    <h5 class="absolute right-5 top-4 text-xl font-semibold text-slate-900">${pokemon.id}</h5>
                     <img src=${pokemon.imagem} alt=${pokemon.nome} class="h-1/2">
                     
                     <div class="flex flex-col bg-red-500 rounded-b-2xl border-t-gray-900 border-t-4 w-full h-1/2">
