@@ -18,7 +18,7 @@ Nesse repositório contém os códigos do meu segundo projeto do Trainee da <a h
   
 <img alt="Gustavo-HTML" height="50" width="80" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
 <img alt="Gustavo-CSS" height="50" width="80" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
-<img alt="Gustavo-TAILWINDCSS" height="50" width="80" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-plain.svg">
+<img alt="Gustavo-TAILWINDCSS" height="50" width="80" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg">
 <img alt="Gustavo-JS" height="50" width="80" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg">
 
 <br><br>
